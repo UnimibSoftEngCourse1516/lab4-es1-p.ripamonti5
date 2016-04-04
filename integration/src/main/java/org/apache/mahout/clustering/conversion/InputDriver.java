@@ -53,7 +53,7 @@ public final class InputDriver {
   private InputDriver() {
   }
   
-  public static void main(String[] args) throws IOException, InterruptedException, ClassNotFoundException {
+  public static void main(String[] args) throws Exception {
     DefaultOptionBuilder obuilder = new DefaultOptionBuilder();
     ArgumentBuilder abuilder = new ArgumentBuilder();
     GroupBuilder gbuilder = new GroupBuilder();
@@ -90,7 +90,7 @@ public final class InputDriver {
   }
   
   public static void runJob(Path input, Path output, String vectorClassName)
-    throws IOException, InterruptedException, ClassNotFoundException {
+    throws Exception {
     Configuration conf = new Configuration();
     conf.set("vector.implementation.class.name", vectorClassName);
     Job job = new Job(conf, "Input Driver running over input: " + input);

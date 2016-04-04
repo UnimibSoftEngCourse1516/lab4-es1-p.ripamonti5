@@ -113,6 +113,7 @@ public abstract class RecommenderWrapper implements Recommender {
       URL resourceURL = Resources.getResource(RecommenderWrapper.class, absoluteResource);
       inSupplier = Resources.newInputStreamSupplier(resourceURL);
     } catch (IllegalArgumentException iae) {
+      log.error(iae.getMessage());
       File resourceFile = new File(resourceName);
       log.info("Falling back to load file {}", resourceFile.getAbsolutePath());
       inSupplier = Files.newInputStreamSupplier(resourceFile);

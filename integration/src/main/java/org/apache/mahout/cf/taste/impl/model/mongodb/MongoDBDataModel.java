@@ -417,8 +417,10 @@ public final class MongoDBDataModel implements DataModel {
         refreshData(userID, items, false);
       } catch (NoSuchUserException e) {
         log.warn("No such user ID: {}", userID);
+    	log.error(e.getMessage());
       } catch (NoSuchItemException e) {
         log.warn("No such items: {}", items);
+    	log.error(e.getMessage());
       }
       if (ts.compareTo(getDate(user.get("created_at"))) < 0) {
         ts = getDate(user.get("created_at"));
@@ -440,8 +442,10 @@ public final class MongoDBDataModel implements DataModel {
           refreshData(userID, items, true);
         } catch (NoSuchUserException e) {
           log.warn("No such user ID: {}", userID);
+      	  log.error(e.getMessage());
         } catch (NoSuchItemException e) {
           log.warn("No such items: {}", items);
+      	  log.error(e.getMessage());
         }
         if (ts.compareTo(getDate(user.get("created_at"))) < 0) {
           ts = getDate(user.get("created_at"));

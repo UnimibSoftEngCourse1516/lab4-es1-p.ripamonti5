@@ -377,7 +377,8 @@ public class VectorBenchmarks {
       // log.info("\n{}", mark);
       log.info("\n{}", mark.asCsvString());
     } catch (OptionException e) {
-      CommandLineUtil.printHelp(group);
+    	log.info(e.getMessage());
+    	CommandLineUtil.printHelp(group);
     }
   }
 
