@@ -294,7 +294,7 @@ public class VectorBenchmarks {
     return i % numClusters;
   }
 
-  public static void main(String[] args) throws IOException {
+  public static void main(String[] args) throws IOException, OptionException {
     DefaultOptionBuilder obuilder = new DefaultOptionBuilder();
     ArgumentBuilder abuilder = new ArgumentBuilder();
     GroupBuilder gbuilder = new GroupBuilder();
@@ -376,8 +376,7 @@ public class VectorBenchmarks {
 
       // log.info("\n{}", mark);
       log.info("\n{}", mark.asCsvString());
-    } catch (OptionException e) {
-    	log.info(e.getMessage());
+    } finally{
     	CommandLineUtil.printHelp(group);
     }
   }
