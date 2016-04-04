@@ -128,7 +128,7 @@ public class VectorBenchmarks {
       while (j < numNonZeros) {
         double value = r.nextGaussian();
         int index = r.nextInt(cardinality);
-        if (!featureSpace.get(index) && value != 0) {
+        if (!featureSpace.get(index) && value != (double) 0 ) {
           featureSpace.set(index);
           indexes[j] = index;
           values[j++] = value;

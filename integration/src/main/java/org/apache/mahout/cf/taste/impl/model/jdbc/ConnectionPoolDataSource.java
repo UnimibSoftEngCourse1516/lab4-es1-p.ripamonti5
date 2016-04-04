@@ -51,7 +51,9 @@ public final class ConnectionPoolDataSource implements DataSource {
     objectPool.setTestWhileIdle(true);
     objectPool.setTimeBetweenEvictionRunsMillis(60 * 1000L);
     // Constructor actually sets itself as factory on pool
-    new PoolableConnectionFactory(connectionFactory, objectPool, null, "SELECT 1", false, false);
+    
+    // Not used
+    // new PoolableConnectionFactory(connectionFactory, objectPool, null, "SELECT 1", false, false);
     delegate = new PoolingDataSource(objectPool);
   }
   

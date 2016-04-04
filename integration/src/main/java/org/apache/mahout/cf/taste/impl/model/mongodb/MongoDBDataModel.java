@@ -379,6 +379,8 @@ public final class MongoDBDataModel implements DataModel {
       } finally {
         reloadLock.unlock();
       }
+    }else{
+	  reloadLock.unlock();
     }
   }
 

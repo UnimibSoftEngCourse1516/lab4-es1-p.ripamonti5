@@ -164,7 +164,7 @@ public class SequenceFilesFromDirectory extends AbstractJob {
 
     jobConfig.set(BASE_INPUT_PATH, input.toString());
 
-    long chunkSizeInBytes = chunkSizeInMB * 1024 * 1024;
+    long chunkSizeInBytes = chunkSizeInMB * 1024L * 1024L;
 
     // set the max split locations, otherwise we get nasty debug stuff
     jobConfig.set("mapreduce.job.max.split.locations", String.valueOf(MAX_JOB_SPLIT_LOCATIONS));

@@ -91,6 +91,8 @@ abstract class AbstractJDBCInMemoryItemSimilarity extends AbstractJDBCComponent 
       } finally {
         reloadLock.unlock();
       }
+    }else{
+    	reloadLock.unlock();
     }
   }
 

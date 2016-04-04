@@ -226,7 +226,7 @@ public final class Driver {
       writer.write(attributeValues.size() + "\n");
       for (Map.Entry<String, Integer> value : attributeValues) {
         // the value and the value index
-        writer.write(String.format("%s%s%s\n", value.getKey(), delimiter, value.getValue().toString()));
+        writer.write(String.format("%s%s%s%n", value.getKey(), delimiter, value.getValue().toString()));
       }
     }
   }
